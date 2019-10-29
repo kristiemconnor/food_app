@@ -1,13 +1,18 @@
 class Api::RecipesController < ApplicationController
 
-  # require "http"
+  
+
 
   def index
+    response = HTTP.get("http://www.recipepuppy.com/api/?q=pumpkin").parse
 
-    render 'show.json.jb'
+    recipe_data = response
 
 
 
 
+
+
+    render 'index.json.jb'
   end
 end

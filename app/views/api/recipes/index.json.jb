@@ -1,0 +1,6 @@
+  
+{
+  title: @recipe_data["results"]["title"],
+  ingredients: @recipe_data["results"]["ingredients"], thumbnail: @recipe_data["results"]["thumbnail"], 
+  href: @recipe_data["results"]["href"]
+}
