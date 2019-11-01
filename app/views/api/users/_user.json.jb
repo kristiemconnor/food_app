@@ -3,4 +3,6 @@
   first_name: user.first_name,
   last_name: user.last_name,
   email: user.email
+  # ingredients: user.ingredients
+  # alphabetical hash of ingredients matching current user id
 }
