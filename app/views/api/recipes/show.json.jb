@@ -1,7 +1,10 @@
   
-{
-  title: @recipe_data["title"],
-  ingredients: @recipe_data["ingredients"], 
-  thumbnail: @recipe_data["thumbnail"], 
-  href: @recipe_data["href"]
-}
+# {
+#   title: @recipe_data["title"],
+#   ingredients: @recipe_data["ingredients"], 
+#   thumbnail: @recipe_data["thumbnail"], 
+#   href: @recipe_data["href"]
+# }
+
+
+@recipe_data[@choice]

@@ -29,10 +29,16 @@ class Api::UsersController < ApplicationController
     @user.first_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
-    @user.password = params[:password] || @user.password
+   
+    if params[:password] 
+      @user.password = params[:password]
+    end
 
-    @user.save
-    render 'show.json.jb'
+    if @user.save
+      render 'show.json.jb'
+    else 
+      render json: {errors: @user.errors.full_messages}, status: :bad_request
+    end
 
   end
 
