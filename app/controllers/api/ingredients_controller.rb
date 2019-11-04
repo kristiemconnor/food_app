@@ -1,8 +1,9 @@
 class Api::IngredientsController < ApplicationController
-  # before_action :authenticate_user
+  before_action :authenticate_user
 
   def index
     # user's ingredients
+    @ingredients = current_user.ingredients
     render 'index.json.jb'
   end
 
