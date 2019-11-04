@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  before_action :authenticate_user, except: [:create]
 
   def create
     @user = User.new(
@@ -22,7 +23,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.find(current_user.id)
     @user.first_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
@@ -39,7 +40,7 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(id: params[:id])
+    @user = User.find(current_user.id)
     @user.destroy
     render json: {message: "User successfully destroyed."}
   end
