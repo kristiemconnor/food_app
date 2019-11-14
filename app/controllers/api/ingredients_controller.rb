@@ -9,7 +9,13 @@ class Api::IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find_by(id: params[:id])
-    render 'show.json.jb'
+
+    if @ingredient.user_id == current_user.id
+      render 'show.json.jb'
+    else
+      render json: { message: "not authorized" }
+
+    end
   end
 
   def create

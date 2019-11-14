@@ -1,1 +1,3 @@
-@ingredient
+# @ingredient
+
+ingredient = render partial: "ingredient.json.jb", locals: {ingredient: @ingredient}

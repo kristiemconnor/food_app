@@ -1,0 +1,6 @@
+{
+  id: ingredient.id,
+  name: ingredient.name,
+  user_id: ingredient.user_id,
+  expiration: ingredient.expiration
+}
